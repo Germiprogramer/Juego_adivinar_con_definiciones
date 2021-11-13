@@ -1,6 +1,28 @@
 MIN = 0
 MAX = 99
 
+while True:
+    nivel = input("Introduce un nivel: simple, intermedio, avanzado, experto, o Stephen Curry:  ")
+    if nivel == "simple":
+        MAX = 100
+        break
+    elif nivel == "intermedio":
+        MAX = 1000
+        break
+    elif nivel == "avanzado":
+        MAX = 1000000
+        break
+    elif nivel == "experto":
+        MAX = 1000000000000
+        break
+    elif nivel == "Stephen Curry":
+        MAX = 10000000000000000000000000000000000000000000000
+        print("SUERTE CON LOS TRIPLES")
+        break
+    else:
+        print("Como no has elegido te pongo el fácil pesao")
+        break
+
 minimo = MIN
 maximo = MAX
 
@@ -27,9 +49,14 @@ while True:
     if intento < numero:
         print("Demasiado pequeñito :(")
         minimo = intento + 1
+        contador = contador + 1
     elif intento > numero:
         print("Demasiado grande")
         maximo = intento - 1
+        contador = contador + 1
     else:
         print("MUY BIEN")
+        contador = contador + 1
         break
+
+print("has usado ", contador , "intentos")
