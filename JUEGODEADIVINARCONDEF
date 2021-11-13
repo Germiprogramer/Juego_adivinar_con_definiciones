@@ -1,0 +1,35 @@
+MIN = 0
+MAX = 99
+
+minimo = MIN
+maximo = MAX
+
+def pedir_numero(invitacion, minimo, maximo):
+    invitacion += " entre " + str(minimo) + " y " + str(maximo) + ": "
+    while True:
+        entrada = input(invitacion)
+        try:
+            entrada = int(entrada)
+        except:
+            pass
+        else:
+            if minimo <= entrada <= maximo:
+                break
+    return entrada
+
+import random
+numero = random.randint(0,100)
+contador = 1
+
+print("Intente adivinar el numero:")
+while True:
+    intento = pedir_numero("Adivine el numero", minimo, maximo,)
+    if intento < numero:
+        print("Demasiado pequeñito :(")
+        minimo = intento + 1
+    elif intento > numero:
+        print("Demasiado grande")
+        maximo = intento - 1
+    else:
+        print("MUY BIEN")
+        break
